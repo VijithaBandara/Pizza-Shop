@@ -5,7 +5,7 @@ import './ProductsPage.css'
 
 const ProductsPage = () => {
   return (
-    <div>
+    <div className='ProductsPage'>
       {pizzas.map((pizza, index) => {
         return <ProductCard key={index} item={pizza} />;
       })}

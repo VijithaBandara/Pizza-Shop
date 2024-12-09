@@ -1,0 +1,72 @@
+/* Full-screen background styling */
+.home-page {
+    background-image: url('https://milanoperth.co.uk/imgs/hero/Milano-Perth-Pizza.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full height */
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Add a dark overlay to enhance text readability */
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Black overlay with transparency */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Styles for the main heading */
+  .overlay h1 {
+    font-size: 3rem; /* Large heading */
+    color: #f4f4f9; /* Off-white color */
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7); /* Shadow to pop out the text */
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Styles for the subheading */
+  .overlay h2 {
+    font-size: 2rem;
+    color: #ffd700; /* Gold color */
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Shadow to pop out the text */
+    margin-top: 10px;
+    animation: slideUp 2s ease-in-out;
+  }
+  
+  /* Fade-in animation for the main heading */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Slide-up animation for the subheading */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

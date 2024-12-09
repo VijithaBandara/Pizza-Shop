@@ -1,4 +1,6 @@
 .pizza-card {
+    display: flex;
+    flex-direction: column;
     width: 300px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -22,6 +24,7 @@
   
   .pizza-details {
     padding: 15px;
+    background-color: #5555555c;
   }
   
   .pizza-name {
@@ -32,19 +35,19 @@
   
   .pizza-description {
     font-size: 1rem;
-    color: #555;
+    color: #b8b8b8;
     margin: 10px 0;
   }
   
   .pizza-price {
     font-size: 1.2rem;
-    color: #e60000;
+    color: #0fe600;
     font-weight: bold;
     margin: 10px 0;
   }
   
   .add-to-cart-btn {
-    background-color: #e60000;
+    background-color: #ff4400;
     color: #fff;
     font-size: 1rem;
     padding: 10px 20px;

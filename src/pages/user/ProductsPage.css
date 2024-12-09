@@ -1,10 +1,14 @@
 /* General Styles for ProductsPage */
-div {
+.ProductsPage {
     display: flex;
     flex-wrap: wrap;
+    background-image: url('https://milanoperth.co.uk/imgs/hero/Milano-Perth-Pizza.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* Full width */
     justify-content: center;
-    margin-top: 30px;
-    gap: 20px;
+    align-items: center;
   }
   
   /* Styling for each product card */
