@@ -1,0 +1,59 @@
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  
+  header nav {
+    margin-right: 20px;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    margin-right: 20px;
+  }
+  
+  header nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    color: #ff6347; /* Tomato color */
+  }
+  
+  header .cart-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  header .cart-icon:hover {
+    color: #ff6347;
+  }

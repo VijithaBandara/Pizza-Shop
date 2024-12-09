@@ -1,0 +1,44 @@
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  footer .footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  footer .footer-content a {
+    color: #ff6347;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  footer .footer-content a:hover {
+    color: #fff;
+  }
+  
+  footer .social-icons {
+    margin-top: 10px;
+  }
+  
+  footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  footer .social-icons a:hover {
+    color: #ff6347;
+  }

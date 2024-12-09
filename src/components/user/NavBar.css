@@ -1,0 +1,86 @@
+/* General Styling for the Navbar */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  li {
+    margin: 0 20px;
+    font-size: 18px;
+  }
+  
+  /* Style for NavLinks */
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Hover effect for Links */
+  a:hover {
+    background-color: #ff6347; /* Tomato color */
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  /* Active link */
+  a.active {
+    background-color: #ff4500; /* Darker tomato color */
+    color: #fff;
+  }
+  
+  /* Animation for the Navbar on load */
+  ul {
+    animation: slideIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Hover animation for individual links */
+  li {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+    animation-delay: calc(0.1s * var(--i));
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add delay for individual list items */
+  li:nth-child(1) {
+    --i: 1;
+  }
+  li:nth-child(2) {
+    --i: 2;
+  }
+  li:nth-child(3) {
+    --i: 3;
+  }
+  
