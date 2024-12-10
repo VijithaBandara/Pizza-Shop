@@ -5,7 +5,6 @@ import Footer from './components/common/Footer.jsx'
 import Home from './pages/user/HomePage.jsx'
 import Products from './pages/user/ProductsPage.jsx'
 import Cart from './pages/user/CartPage.jsx'
-import Navbar from './components/user/Navbar.jsx';
 
 function App() {
   return (
