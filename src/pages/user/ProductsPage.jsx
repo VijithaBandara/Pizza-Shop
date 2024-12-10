@@ -9,7 +9,6 @@ const ProductsPage = () => {
       {pizzas.map((pizza, index) => {
         return <ProductCard key={index} item={pizza} />;
       })}
-      
     </div>
   )
 }

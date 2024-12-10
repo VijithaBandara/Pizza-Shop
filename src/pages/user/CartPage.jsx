@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CartItem from '../../components/user/CartItem';
 import './CartPage.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,8 +17,8 @@ const CartPage = () => {
     dispatch(quantityChange({ id, change}));
   };
 
-  //const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
-  const totalAmount = 111;
+  const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+  
   return (
     <div className="cart-page">
       <h1 className="cart-title">🛒 Your Pizza Cart</h1>

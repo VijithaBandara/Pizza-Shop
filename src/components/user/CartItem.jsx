@@ -9,7 +9,7 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
       <img src={image} alt={name} className="cart-item-image" />
       <div className="cart-item-details">
         <h3 className="cart-item-name">{name}</h3>
-        <p className="cart-item-price">${price.toFixed(2)}</p>
+        <p className="cart-item-price">${price}</p>
         <div className="quantity-controls">
           <button onClick={() => onQuantityChange(id, -1)} disabled={quantity <= 1}>-</button>
           <span>{quantity}</span>

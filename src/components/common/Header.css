@@ -57,3 +57,13 @@ header {
   header .cart-icon:hover {
     color: #ff6347;
   }
+
+  .count{
+    border-radius: 50px;
+    background-color: #ff3737;
+    padding: 3px;
+    right: 25px;
+    bottom: 25px;
+    position: relative;
+    font-size: 15px;
+  }

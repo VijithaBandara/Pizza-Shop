@@ -1,9 +1,12 @@
 import React from 'react'
 import './ProductCard.css'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../slices/productSlice'
 
 const ProductCard = ({item}) => {
 
   const { name, description, price, image } =item
+  const dispatch = useDispatch();
 
   return (
     <div className="pizza-card">
@@ -12,7 +15,9 @@ const ProductCard = ({item}) => {
         <h3 className="pizza-name">{name}</h3>
         <p className="pizza-description">{description}</p>
         <p className="pizza-price">{price}</p>
-        <button className="add-to-cart-btn">Add to Cart</button>
+        <button onClick={() => {
+          dispatch(addProduct({item}));
+        }} className="add-to-cart-btn">Add to Cart</button>
       </div>
     </div>
   )
