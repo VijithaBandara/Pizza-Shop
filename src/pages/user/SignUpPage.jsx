@@ -2,27 +2,45 @@ import React, { useState } from 'react';
 import './LoginPage.css'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { login } from '../../slices/userSlice';
+import { signUp } from '../../slices/userSlice';
 
-const Login = () => {
+const SignUpPage = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(login({email,password}));
-    navigate('/home')
+    if(password === confirm){
+      dispatch(signUp({name,email,password}));
+      navigate('/home')
+    }else{
+      alert("confirm is not match")
+    }
   };
 
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>🍕 Pizza Shop Login 🍕</h2>
+        <h2>🍕 Pizza Shop Sign Up 🍕</h2>
 
         <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="name">Name</label>
+            <input 
+              type="name" 
+              id="name" 
+              placeholder="Enter your name"
+              value={name} 
+              onChange={(e) => setName(e.target.value)} 
+              required 
+            />
+          </div>
+
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input 
@@ -47,15 +65,27 @@ const Login = () => {
             />
           </div>
 
-          <button type="submit" className="btn-login">Log In</button>
+          <div className="input-group">
+            <label htmlFor="password">Confirm Password</label>
+            <input 
+              type="password" 
+              id="confirm" 
+              placeholder="Confirm your password" 
+              value={confirm} 
+              onChange={(e) => setConfirm(e.target.value)} 
+              required 
+            />
+          </div>
+
+          <button type="submit" className="btn-login">Sign Up</button>
         </form>
 
         <p className="signup-text">
-          Don't have an account? <a href="/signup">Sign up</a>
+          Already have an account? <a href="/login">Login</a>
         </p>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUpPage;

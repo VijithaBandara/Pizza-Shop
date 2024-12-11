@@ -14,9 +14,16 @@ const userSlice = createSlice({
             state.email = action.payload.email
             state.password = action.payload.password
             state.position = "manager"
+        },
+
+        signUp:(state, action) => {
+            state.name = action.payload.name
+            state.email = action.payload.email
+            state.password = action.payload.password
+            state.position = "employee"
         }
     }
 })
 
-export const {login} =userSlice.actions;
+export const {login, signUp} =userSlice.actions;
 export default userSlice.reducer;
