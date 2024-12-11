@@ -1,5 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { pizzas } from "../services/pizzas"
+import axios from 'axios';
+
+const API_URL = 'http://localhost:4000/products';
+
+export const fetchProducts = createAsyncThunk('product/fetchProducts', async () => {
+    const response = await axios.get(API_URL);
+    return response.data;
+  });
 
 const productSlice = createSlice({
     name:'product',
@@ -7,11 +15,28 @@ const productSlice = createSlice({
         cartItems:[],
         quantityCount:0,
         products:[],
-    },
+        loading: false,
+        error: null,
+      },
+      extraReducers: (builder) => {
+        builder
+          .addCase(fetchProducts.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+          })
+          .addCase(fetchProducts.fulfilled, (state, action) => {
+            state.loading = false;
+            state.products = action.payload;
+          })
+          .addCase(fetchProducts.rejected, (state, action) => {
+            state.loading = false;
+            state.error = 'Failed to fetch products';
+          });
+      },
     reducers:{
-        getProducts:(state, action) => {
+        /*getProducts:(state, action) => {
             state.products = [...pizzas];
-        },
+        },*/
         addProduct:(state, action) => {
             const cartItem = state.cartItems.find(Item => Item.id === action.payload.item.id);
             if (cartItem) {

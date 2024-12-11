@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './LoginPage.css'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { signUp } from '../../slices/userSlice';
+import { signup } from '../../slices/userSlice';
 
 const SignUpPage = () => {
   const [name, setName] = useState('');
@@ -16,7 +16,7 @@ const SignUpPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(password === confirm){
-      dispatch(signUp({name,email,password}));
+      dispatch(signup({name,email,password}));
       navigate('/home')
     }else{
       alert("confirm is not match")

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './HomePage.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../../slices/productSlice';
+import { fetchProducts, getProducts } from '../../slices/productSlice';
 
 const HomePage = () => {
 
@@ -9,7 +9,7 @@ const HomePage = () => {
   const pizzas = useRef(useSelector((state) => state.product.products));
   
   useEffect(() => {
-    dispatch(getProducts({}))
+    dispatch(fetchProducts())
     console.log("get")
     },[pizzas]);
 
