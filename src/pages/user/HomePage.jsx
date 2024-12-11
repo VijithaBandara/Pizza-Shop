@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './HomePage.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts } from '../../slices/productSlice';
 
 const HomePage = () => {
 
+  const dispatch = useDispatch();
+  const pizzas = useRef(useSelector((state) => state.product.products));
+  
+  useEffect(() => {
+    dispatch(getProducts({}))
+    console.log("get")
+    },[pizzas]);
+
   const name = useSelector((state) => state.user.name);
-  console.log(name)
+
   return (
     <div className="home-page">
       <div className="overlay">
@@ -18,3 +27,7 @@ const HomePage = () => {
 }
 
 export default HomePage;
+function dispatch(arg0) {
+  throw new Error('Function not implemented.');
+}
+
